@@ -1,0 +1,9 @@
+sources:
+  - name: jaffle_shop
+    database: shop
+    schema: public
+
+    tables:
+      - name: payments
+      - name: orders
+      - name: customers

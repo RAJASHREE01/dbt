@@ -5,4 +5,4 @@ select
     status as payment_status,
     amount / 100 as amount,
     created as created_at
-from shop.public.payments
+from {{source('jaffle_shop','payments')}}
