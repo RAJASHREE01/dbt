@@ -11,6 +11,10 @@ sources:
             tests:
               - unique
               - not_null
+          - name: status
+            tests:
+            - accepted_values:
+                values: ['completed','placed','returned','return_pending','shipped']
       - name: customers
         columns:
           - name: id
@@ -26,4 +30,4 @@ models:
           - unique
           - not_null
       - name: first_name
-      - name: last_nam
+      - name: last_name
