@@ -9,11 +9,21 @@ sources:
         columns:
           - name: id
             tests:
-             - unique
-             - not_null
+              - unique
+              - not_null
       - name: customers
         columns:
           - name: id
             tests:
-             - unique
-             - not_null
+              - unique
+              - not_null
+
+models:
+  - name: stg_jaffle_shop__customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+      - name: last_nam
