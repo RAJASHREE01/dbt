@@ -12,6 +12,7 @@ sources:
               - unique
               - not_null
           - name: status
+            description: "{{ doc('order_status')}}"
             tests:
             - accepted_values:
                 values: ['completed','placed','returned','return_pending','shipped']
@@ -29,5 +30,25 @@ models:
         tests:
           - unique
           - not_null
-      - name: first_name
-      - name: last_name
+  - name: stg_jaffle_shop__orders
+    columns:
+      - name: order_id
+        tests:
+         - unique
+         - not_null
+      - name: order_status
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - completed
+                  - shipped
+                  - returned
+                  - placed
+                  - return_pending
+      - name: customer_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_jaffle_shop__customers')
+                field: customer_id
