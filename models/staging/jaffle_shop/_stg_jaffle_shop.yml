@@ -14,8 +14,9 @@ sources:
           - name: status
             description: "{{ doc('order_status')}}"
             tests:
-            - accepted_values:
-                values: ['completed','placed','returned','return_pending','shipped']
+              - accepted_values:
+                  arguments:
+                    values: ['completed','placed','returned','return_pending','shipped']
       - name: customers
         columns:
           - name: id
@@ -34,18 +35,13 @@ models:
     columns:
       - name: order_id
         tests:
-         - unique
-         - not_null
+          - unique
+          - not_null
       - name: order_status
         tests:
           - accepted_values:
               arguments:
-                values:
-                  - completed
-                  - shipped
-                  - returned
-                  - placed
-                  - return_pending
+                values: ['completed','shipped','returned','placed','return_pending']
       - name: customer_id
         tests:
           - relationships:
