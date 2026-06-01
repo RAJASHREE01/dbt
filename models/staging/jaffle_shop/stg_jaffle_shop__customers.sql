@@ -3,4 +3,4 @@ select
         first_name,
         last_name
 
-    from shop.public.customers
+    from {{ source('jaffle_shop', 'customers')}}
