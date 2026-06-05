@@ -6,7 +6,7 @@ models:
     columns:
       - name: id
         description: "The primary key for this table"
-        data_tests:
+        tests:
           - unique
           - not_null
 
@@ -15,6 +15,6 @@ models:
     columns:
       - name: id
         description: "The primary key for this table"
-        data_tests:
+        tests:
           - unique
           - not_null
